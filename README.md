@@ -1,3 +1,9 @@
+**NOTE:** This repository [chatgpt-wrapper-clone](https://github.com/Pinaki82/chatgpt-wrapper-clone.git) is a clone of https://github.com/mmabrouk/chatgpt-wrapper version 0.6.1.
+
+I'm not a Python programmer by any means. So please do not expect updates.
+
+**REASON:** The latest version of [chatgpt-wrapper](https://github.com/mmabrouk/chatgpt-wrapper) supports OpenAI Playground, which comes with limitations. OpenAI Playground is a subscription-based service. The ChatGPT support seems to have been lost there. I noticed that after upgrading the pip package to 10.x.x or something. This repository has been created from a published tag version 0.6.1 of [chatgpt-wrapper](https://github.com/mmabrouk/chatgpt-wrapper), the version that last worked on my Xubuntu machine with the real ChatGPT. The latest version needs OpenAI Playground API Key, which differs from ChatGPT. Hence this effort.
+
 <h1><p align="center">:candy:ChatGPT (and GPT4) Wrapper:candy:</p></h1>
 
 ## Welcome!
@@ -16,17 +22,17 @@ What would you like to do?
 
 ## Highlights
 
-🤖 **Programmable ChatGPT**. The ChatGPT Wrapper lets you use the powerful ChatGPT/GPT4 bot in your _Python scripts_ or on the _command line_, making it easy to leverage its functionality into your projects.
+**Programmable ChatGPT**. The ChatGPT Wrapper lets you use the powerful ChatGPT/GPT4 bot in your _Python scripts_ or on the _command line_, making it easy to leverage its functionality into your projects.
 
-💬 **Runs in Shell**. You can call and interact with ChatGPT/GPT4 in the terminal.
+**Runs in Shell**. You can call and interact with ChatGPT/GPT4 in the terminal.
 
-💻  **Supports official ChatGPT API**. Make API calls directly to the OpenAI ChatGPT endpoint (all supported models accessible by your OpenAI account)
+**Supports official ChatGPT API**. Make API calls directly to the OpenAI ChatGPT endpoint (all supported models accessible by your OpenAI account)
 
-🐍 **Python API**. The ChatGPT Wrapper is a Python library that lets you use ChatGPT/GPT4 in your Python scripts.
+**Python API**. The ChatGPT Wrapper is a Python library that lets you use ChatGPT/GPT4 in your Python scripts.
 
-🔌 **Simple plugin architecture**. Extend the wrapper with custom functionality (alpha)
+**Simple plugin architecture**. Extend the wrapper with custom functionality (alpha)
 
-🐳 **Docker image**. The ChatGPT Wrapper is also available as a docker image. (experimental)
+**Docker image**. The ChatGPT Wrapper is also available as a docker image. (experimental)
 
 :test_tube: **Flask API**. You can use the ChatGPT Wrapper as an API. (experimental)
 
@@ -67,15 +73,19 @@ For the `/editor` command to work, you'll need a command line editor installed a
 Install the latest version of this software directly from github with pip:
 
 ```bash
-pip install git+https://github.com/mmabrouk/chatgpt-wrapper
+pip install git+https://github.com/Pinaki82/chatgpt-wrapper-clone.git
 ```
+
 #### From source (recommended for development)
 
 * Install the latest version of this software directly from git:
+  
   ```bash
-  git clone https://github.com/mmabrouk/chatgpt-wrapper.git
+  git clone https://github.com/Pinaki82/chatgpt-wrapper-clone.git
   ```
+
 * Install the the development package:
+  
   ```bash
   cd chatgpt-wrapper
   pip install -e .
@@ -158,7 +168,7 @@ Find the 'Config file' setting, and copy the [config.sample.yaml](/config.sample
 
 On Linux:
 
- ```bash
+```bash
 mkdir -p ~/.config/chatgpt-wrapper/profiles/default
 cp config.sample.yaml ~/.config/chatgpt-wrapper/profiles/default/config.yaml
 ```
@@ -199,7 +209,6 @@ Once you're logged in, you have full access to all commands.
 
 **IMPORTANT NOTE:** The user authorization system from the command line is 'admin party' -- meaning every logged in user has admin privileges, including editing and deleting other users.
 
-
 ## Configuration
 
 From a running `chatgpt` instance, execute `/config` to view the current configuration.
@@ -225,10 +234,10 @@ Templates allow storing text in template files, and quickly leveraging the conte
 
 Features:
 
- * Per-profile templates
- * Create/edit templates
- * `{{ variable }}` syntax substitution
- * Five different workflows for collecting variable values, editing, and running
+* Per-profile templates
+* Create/edit templates
+* `{{ variable }}` syntax substitution
+* Five different workflows for collecting variable values, editing, and running
 
 See the various `/help template` commands for more information.
 
@@ -236,7 +245,7 @@ See the various `/help template` commands for more information.
 
 The wrapper exposes some builtin variables that can be used in templates:
 
- * `{{ clipboard }}` - Insert the contents of the clipboard
+* `{{ clipboard }}` - Insert the contents of the clipboard
 
 ### Front matter
 
@@ -255,19 +264,20 @@ All other attributes will be passed to the template as variable substitutions.
 ### Using plugins
 
 1. Place the plugin file in either:
-  * The main `plugins` directory of this module
-  * A `plugins` directory in your profile
+   
+   * The main `plugins` directory of this module
+   * A `plugins` directory in your profile
 
 2. Enable the plugin in your configuration:
-
+   
    ```yaml
    plugins:
      enabled:
        # This is a list of plugins to enable, each list item should be the name of a plugin file, without the extension.
        - test
    ```
+   
    Note that setting `plugins.enabled` will overwrite the default enabled plugins. see `/config` for a list of default enabled plugins.
-
 
 ### Writing plugins
 
