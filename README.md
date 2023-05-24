@@ -4,6 +4,8 @@ I'm not a Python programmer by any means. So please do not expect updates.
 
 **REASON:** The latest version of [chatgpt-wrapper](https://github.com/mmabrouk/chatgpt-wrapper) supports OpenAI Playground, which comes with limitations. OpenAI Playground is a subscription-based service. The ChatGPT support seems to have been lost there. I noticed that after upgrading the pip package to 10.x.x or something. This repository has been created from a published tag version 0.6.1 of [chatgpt-wrapper](https://github.com/mmabrouk/chatgpt-wrapper), the version that last worked on my Xubuntu machine with the real ChatGPT. The latest version needs OpenAI Playground API Key, which differs from ChatGPT. Hence this effort.
 
+Special Thanks to [mmabrouk](https://github.com/mmabrouk)!
+
 <h1><p align="center">:candy:ChatGPT (and GPT4) Wrapper:candy:</p></h1>
 
 ## Welcome!
